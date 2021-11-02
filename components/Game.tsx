@@ -1,6 +1,6 @@
 import React from 'react';
 import { Board } from './Board';
-import { Winner } from './Winner';
+import { GameText } from './GameText';
 import { GameControls } from './GameControls';
 
 export const Game = () => {
@@ -34,6 +34,7 @@ export const Game = () => {
   }
 
   function setSquareValue(index: number) {
+    if (winner) return;
     const newBoard = [...board];
     newBoard[index] = xTurn ? 'X' : 'O';
     setBoard(newBoard);
@@ -47,7 +48,7 @@ export const Game = () => {
   return (
     <div>
       <Board squares={board} onClick={setSquareValue} />
-      <Winner winner={winner} />
+      <GameText winner={winner} isNextTurnX={xTurn} />
       <GameControls onClick={resetBoard} />
     </div>
   );
