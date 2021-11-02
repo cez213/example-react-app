@@ -5,9 +5,7 @@ import styled from 'styled-components';
 import './style.css';
 
 interface AppProps {}
-interface AppState {
-  name: string;
-}
+interface AppState {}
 
 class App extends Component<AppProps, AppState> {
   constructor(props) {
