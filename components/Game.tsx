@@ -34,8 +34,9 @@ export const Game = () => {
   }
 
   function setSquareValue(index: number) {
-    // Stop players from continue to click spaces.
-    if (winner) return;
+    // Stop players from continue to click spaces. Also, don't let them click
+    // spaces that have already been clicked.
+    if (winner || board[index]) return;
     const newBoard = [...board];
     newBoard[index] = xTurn ? 'X' : 'O';
     setBoard(newBoard);
