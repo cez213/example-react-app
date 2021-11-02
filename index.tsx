@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
-import Hello from './Hello';
+import { Game } from './components/Game';
+import styled from 'styled-components';
 import './style.css';
 
-interface AppProps { }
+interface AppProps {}
 interface AppState {
   name: string;
 }
@@ -11,21 +12,29 @@ interface AppState {
 class App extends Component<AppProps, AppState> {
   constructor(props) {
     super(props);
-    this.state = {
-      name: 'React'
-    };
   }
 
   render() {
     return (
       <div>
-        <Hello name={this.state.name} />
-        <p>
-          Start editing to see some magic happen :)
-        </p>
+        <Wrapper>
+          <Title>Tic Tac Toe</Title>
+          <Game />
+        </Wrapper>
       </div>
     );
   }
 }
+
+const Title = styled.h1`
+  font-size: 1.5em;
+  text-align: center;
+  color: palevioletred;
+`;
+
+const Wrapper = styled.section`
+  padding: 4em;
+  background: papayawhip;
+`;
 
 render(<App />, document.getElementById('root'));
