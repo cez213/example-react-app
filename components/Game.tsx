@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Board } from './Board';
 
-export const Game = ({ value, onClick }) => {
+export const Game = () => {
   const [board, setBoard] = React.useState(Array(9).fill(null));
   const [xTurn, setIsNextTurnX] = React.useState(true);
   const winner = calculateWinner(board);
@@ -32,7 +32,6 @@ export const Game = ({ value, onClick }) => {
   }
 
   function setSquareValue(index: number) {
-    console.log(index, xTurn);
     const newBoard = [...board];
     newBoard[index] = xTurn ? 'X' : 'O';
     setBoard(newBoard);
