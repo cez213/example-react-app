@@ -1,9 +1,11 @@
 import React from 'react';
-import styled from 'styled-components';
 import { Board } from './Board';
+import { Winner } from './Winner';
+import { GameControls } from './GameControls';
 
 export const Game = () => {
-  const [board, setBoard] = React.useState(Array(9).fill(null));
+  const initalBoardState = Array(9).fill(null);
+  const [board, setBoard] = React.useState(initalBoardState);
   const [xTurn, setIsNextTurnX] = React.useState(true);
   const winner = calculateWinner(board);
 
@@ -38,9 +40,15 @@ export const Game = () => {
     setIsNextTurnX(!xTurn);
   }
 
+  function resetBoard() {
+    setBoard(initalBoardState);
+  }
+
   return (
     <div>
       <Board squares={board} onClick={setSquareValue} />
+      <Winner winner={winner} />
+      <GameControls onClick={resetBoard} />
     </div>
   );
 };
