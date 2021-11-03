@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 import { Game } from './components/Game';
+import { Game as UnfinishedGame } from './unfinished_components/Game';
 import styled from 'styled-components';
 import './style.css';
 
@@ -12,12 +13,13 @@ class App extends Component<AppProps, AppState> {
     super(props);
   }
 
+  // TODO: Add Game to show the finish product.
   render() {
     return (
       <div>
         <Wrapper>
           <Title>Tic Tac Toe</Title>
-          <Game />
+          <UnfinishedGame />
         </Wrapper>
       </div>
     );
