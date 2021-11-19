@@ -8,9 +8,9 @@ export const Game = () => {
   // TODO: setup state.
 
   // TODO: fill in methods.
-  function calculateWinner(board) {}
+  function calculateWinner() {}
 
-  function setSquareValue(index: number) {}
+  function setSquareValue() {}
 
   function resetBoard() {}
 
