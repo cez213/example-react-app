@@ -5,7 +5,7 @@ import { Square } from './Square';
 export const Board = ({ squares, onClick }) => (
   <Grid>
     {squares.map((square, i) => (
-      <Square value={square} onClick={() => onClick(i)} />
+      <Square key={i} value={square} onClick={() => onClick(i)} />
     ))}
   </Grid>
 );

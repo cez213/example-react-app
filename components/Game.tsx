@@ -9,7 +9,7 @@ export const Game = () => {
   const [xTurn, setIsNextTurnX] = React.useState(true);
   const winner = calculateWinner(board);
 
-  function calculateWinner(board) {
+  function calculateWinner(board: Array<number | null>) {
     const lines = [
       [0, 1, 2],
       [0, 3, 6],
